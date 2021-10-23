@@ -23,7 +23,9 @@
     "test:eslint": "eslint .",
     "test:flow": "flow check",
     "test:jest": "jest",
-    "test:tsc":"tsc --noEmit"
+    "test:tsc": "tsc --noEmit",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "prettier": {
     "bracketSpacing": false,
@@ -39,10 +41,12 @@
       "/example/"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "@snyk/protect": "latest"
+  },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@react-native-community/eslint-config":"0.0.7",
+    "@react-native-community/eslint-config": "0.0.7",
     "@types/react-native": "^0.61.7",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
@@ -71,5 +75,6 @@
   "directories": {
     "doc": "doc",
     "example": "example"
-  }
+  },
+  "snyk": true
 }
